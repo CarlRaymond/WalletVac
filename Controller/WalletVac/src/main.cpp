@@ -1,5 +1,7 @@
 #include <Arduino.h>
 
+uint16_t ONTIME_SHORT = 8;
+uint16_t ONTIME_LONG = 50;
 
 void setup() {
 
@@ -16,59 +18,84 @@ void setup() {
   TCCR1B = (1 << WGM13) | (1 << WGM12) | (1 << CS10);
   
   pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
 
 }
 
 void loop() {
-  // HIGH for 100ms
+  // HIGH for ONTIME
   digitalWrite(13, HIGH);
-  delay(100);
+  digitalWrite(12, LOW);
+  delay(ONTIME_SHORT);
   digitalWrite(13, LOW);
-  delay(400);
+  digitalWrite(12, HIGH);
+  delay(200-ONTIME_SHORT);
 
-  // HIGH for 100ms
+  // HIGH for ONTIME
   digitalWrite(13, HIGH);
-  delay(100);
+  digitalWrite(12, LOW);
+  delay(ONTIME_SHORT);
   digitalWrite(13, LOW);
-  delay(400);
+  digitalWrite(12,HIGH);
+  delay(200-ONTIME_SHORT);
 
-  // HIGH for 100ms
+  // HIGH for ONTIME
   digitalWrite(13, HIGH);
-  delay(100);
+  digitalWrite(12, LOW);
+  delay(ONTIME_SHORT);
   digitalWrite(13, LOW);
-  delay(400);
+  digitalWrite(12, HIGH);
+  delay(200-ONTIME_SHORT);
 
-  // HIGH for 100ms
+  // HIGH for ONTIME
   digitalWrite(13, HIGH);
-  delay(100);
+  digitalWrite(12, LOW);
+  delay(ONTIME_SHORT);
   digitalWrite(13, LOW);
-  delay(400);
+  digitalWrite(12, HIGH);
+  delay(200-ONTIME_SHORT);
+
+  // HIGH for ONTIME
+  digitalWrite(13, HIGH);
+  digitalWrite(12, LOW);
+  delay(ONTIME_SHORT);
+  digitalWrite(13, LOW);
+  digitalWrite(12, HIGH);
+  delay(200-ONTIME_SHORT);
 
   delay(2000);
 
-  // HIGH for 250ms
+  // HIGH for ONTIME_LONG
   digitalWrite(13, HIGH);
-  delay(250);
+  digitalWrite(12, LOW);
+  delay(ONTIME_LONG);
   digitalWrite(13, LOW);
-  delay(250);
+  digitalWrite(12, HIGH);
+  delay(500-ONTIME_LONG);
 
   // HIGH for 250ms
   digitalWrite(13, HIGH);
-  delay(250);
+  digitalWrite(12, LOW);
+  delay(ONTIME_LONG);
   digitalWrite(13, LOW);
-  delay(250);
+  digitalWrite(12,HIGH);
+  delay(500-ONTIME_LONG);
 
   // HIGH for 250ms
   digitalWrite(13, HIGH);
-  delay(250);
+  digitalWrite(12, LOW);
+  delay(ONTIME_LONG);
   digitalWrite(13, LOW);
-  delay(250);
+  digitalWrite(12, HIGH);
+  delay(500-ONTIME_LONG);
 
   // HIGH for 250ms
   digitalWrite(13, HIGH);
-  delay(250);
+  digitalWrite(12, LOW);
+  delay(ONTIME_LONG);
   digitalWrite(13, LOW);
-  delay(250);
+  digitalWrite(12, HIGH);
+  delay(500-ONTIME_LONG);
 
   delay(2000);
 }
