@@ -2536,6 +2536,10 @@
 		(color 0 0 0 0)
 		(uuid "f9668d17-5a64-41e9-b5f8-a1b70d32dbd4")
 	)
+	(no_connect
+		(at 236.22 55.88)
+		(uuid "d19812c9-76f3-4331-bea5-1a65c14b59e1")
+	)
 	(wire
 		(pts
 			(xy 138.43 77.47) (xy 138.43 78.74)
@@ -3781,7 +3785,7 @@
 		)
 		(uuid "5fafa5b7-411e-4ea3-a8e6-7f2352da419b")
 	)
-	(label "LED4"
+	(label "LED D"
 		(at 240.03 66.04 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3803,7 +3807,7 @@
 		)
 		(uuid "8a5fcdcb-1779-448d-aaad-393794bf1f16")
 	)
-	(label "LED4"
+	(label "LED D"
 		(at 16.51 175.26 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3814,7 +3818,7 @@
 		)
 		(uuid "8c6adc53-cc16-4bdb-881e-588135eb9c61")
 	)
-	(label "LED3"
+	(label "LED C"
 		(at 16.51 168.91 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3825,7 +3829,7 @@
 		)
 		(uuid "9ce88d61-fee0-464d-9148-fe925599d756")
 	)
-	(label "LED1"
+	(label "LED A"
 		(at 240.03 58.42 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3847,7 +3851,7 @@
 		)
 		(uuid "acb4b1d1-f292-464c-b8b4-ab66686c95d3")
 	)
-	(label "LED2"
+	(label "LED B"
 		(at 16.51 162.56 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3869,7 +3873,7 @@
 		)
 		(uuid "bab0ca73-8742-41c3-b5d1-85ef9416b552")
 	)
-	(label "LED3"
+	(label "LED C"
 		(at 240.03 63.5 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3880,7 +3884,7 @@
 		)
 		(uuid "c8374ee1-4c6d-4ebf-837e-3dd867cca7a3")
 	)
-	(label "LED1"
+	(label "LED A"
 		(at 16.51 156.21 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3891,7 +3895,7 @@
 		)
 		(uuid "de96f860-c85e-47b2-b444-81ed968171c1")
 	)
-	(label "LED2"
+	(label "LED B"
 		(at 240.03 60.96 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6449,7 +6453,7 @@
 				)
 			)
 		)
-		(property "Value" "TSOP343xx"
+		(property "Value" "TSOP34338"
 			(at 157.015 119.38 0)
 			(effects
 				(font
@@ -7151,7 +7155,7 @@
 				)
 			)
 		)
-		(property "Value" "TSOP343xx"
+		(property "Value" "TSOP34338"
 			(at 157.015 90.17 0)
 			(effects
 				(font
