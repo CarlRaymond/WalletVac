@@ -4,14 +4,15 @@ uint16_t ONTIME_SHORT = 8;
 uint16_t ONTIME_LONG = 50;
 
 // Pin assignments
-const int8_t PIN_BELL = 2;    // Bell, active LOW
-const int8_t PIN_38KHz = 9;   // 38KHz
-const int8_t PIN_LED1 = 10;   // IR LED1, active HIGH
-const int8_t PIN_LED2 = 11;   // IR LED2, active HIGH
-const int8_t PIN_LED3 = 12;   // IR LED3, active HIGH
+const int8_t PIN_BELL = 2;      // Bell, active LOW
+const int8_t PIN_38KHz = 9;     // 38KHz
+const int8_t PIN_LED_A = 10;    // IR LED1, active HIGH
+const int8_t PIN_LED_B = 11;    // IR LED2, active HIGH
+const int8_t PIN_LED_C = 12;    // IR LED3, active HIGH
+const int8_t PIN_LED_D = 13;    // IR LED_D, active HIGH
 
 
-// Cycles 1 -> 2 -> 3
+// Cycles 1 -> 2 -> 3 -> 4
 volatile int8_t activeLed = 1;
 
 void setup() {
@@ -46,29 +47,37 @@ void setup() {
   // Configure GPIO
   pinMode(PIN_BELL, OUTPUT);
   digitalWrite(PIN_BELL, HIGH);
-  pinMode(PIN_LED1, OUTPUT);
-  digitalWrite(PIN_LED1, LOW);
-  pinMode(PIN_LED2, OUTPUT);
-  digitalWrite(PIN_LED2, LOW);
-  pinMode(PIN_LED3, OUTPUT);
-  digitalWrite(PIN_LED3, LOW);
+  pinMode(PIN_LED_A, OUTPUT);
+  digitalWrite(PIN_LED_A, LOW);
+  pinMode(PIN_LED_B, OUTPUT);
+  digitalWrite(PIN_LED_B, LOW);
+  pinMode(PIN_LED_C, OUTPUT);
+  digitalWrite(PIN_LED_C, LOW);
+  pinMode(PIN_LED_D, OUTPUT);
+  digitalWrite(PIN_LED_D, LOW);
+  
 }
 
 ISR(TIMER2_COMPA_vect) {
   switch(activeLed) {
     case 1:
-      digitalWrite(PIN_LED1, LOW);
-      digitalWrite(PIN_LED2, HIGH);
+      digitalWrite(PIN_LED_A, LOW);
+      digitalWrite(PIN_LED_B, HIGH);
       activeLed = 2;
       break;
     case 2:
-      digitalWrite(PIN_LED2, LOW);
-      digitalWrite(PIN_LED3, HIGH);
+      digitalWrite(PIN_LED_B, LOW);
+      digitalWrite(PIN_LED_C, HIGH);
       activeLed = 3;
       break;
+    case 3:
+      digitalWrite(PIN_LED_C, LOW);
+      digitalWrite(PIN_LED_D, HIGH);
+      activeLed = 4;
+      break;
     default:
-      digitalWrite(PIN_LED3, LOW);
-      digitalWrite(PIN_LED1, HIGH);
+      digitalWrite(PIN_LED_D, LOW);
+      digitalWrite(PIN_LED_A, HIGH);
       activeLed = 1;
       break;
   }
